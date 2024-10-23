@@ -40,6 +40,27 @@
         p {
             margin-bottom: 20px;
         }
+        a {
+            color: #2e7d32;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .button {
+            display: inline-block;
+            background-color: #66bb6a;
+            color: #ffffff;
+            padding: 10px 20px;
+            margin: 10px 5px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .button:hover {
+            background-color: #57a05a;
+        }
         strong {
             color: #388e3c;
         }
@@ -66,6 +87,10 @@
             main {
                 margin: 20px;
             }
+            .button {
+                width: 100%;
+                margin: 10px 0;
+            }
         }
     </style>
 </head>
@@ -78,9 +103,16 @@
 <main>
     <p>The Portland Hacker Fund is a fiscally sponsored project of the <a href="https://pdxhackerspace.org/">PDX Hackerspace</a> with a goal to take donations from the community and issue the funds as grants to people or organizations in the community who are building great things, with a strong focus on information security and related fields, especially those aligned with a strong hacker ethos. Grants will specifically target asymmetric impact, where small amounts of money ($1k, $5k, $10k, etc.) will enable significant work in the space. For this reason, early on, the most likely targets will be University research projects.</p>
 
+    <!-- Added Buttons -->
+    <div style="text-align: center;">
+        <a href="https://signal.group/#CjQKICe1IhiChi74GgLGJql1-YcUndkMvRtniTkAygWVlaSWEhAXFtsQRFJPPxtXyodsPbou" class="button">Join our Signal Chat</a>
+        <a href="https://forms.gle/your-application-form-link" class="button">Apply for a Grant</a>
+        <a href="https://your-donation-platform-link" class="button">Set Up Recurring Donations (not ready)</a>
+    </div>
+
     <h2>Funding</h2>
 
-    <p>As it stands, the current idea is that we would collect tax-deductible donations from the general public and organizations in our community, which will immediately be stored in a treasury consisting of low risk index funds managed by Vanguard or similar. Maybe strategically across VITAX, VTSAX, VTIVX, etc.</p>
+    <p>As it stands, the current idea is that we would collect tax-deductible donations from the general public and organizations in our community, which will immediately be stored in a treasury consisting of low-risk index funds managed by Vanguard or similar. Maybe strategically across VITAX, VTSAX, VTIVX, etc.</p>
 
     <p>Every year, maybe January 1st, the size of the treasury will be observed, and expenses for the year will be calculated. Up to 5% of the treasury will go towards grants, up to 2% on events, and up to 2% on employee salary. Events and salary budget will likely not be accessed in the first few years of operation until the fund grows to a sustainable size. Long term, if there are any full-time employees that need to be hired, their salaries will be capped at $100k, possibly pegged to 2025 inflation. The idea is to grow the treasury every year to enable more grants to the community as the treasury continues to grow.</p>
 
