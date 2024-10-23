@@ -1,2 +1,2 @@
 # PDXHF
-Portland Hacker Foundation Website
+Portland Hacker Fund Website
