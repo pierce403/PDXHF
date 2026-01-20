@@ -23,6 +23,14 @@ This file is a shared knowledge base: read it before starting, and update it bef
 
 Recursive self-improvement means agents learn from each task, document those learnings, and continuously get more effective over time.
 
+## The AGENTS.md File
+
+`AGENTS.md` is a shared knowledge base for agent-specific instructions, conventions, and learnings for this project.
+
+## Core Instruction for AGENTS.md
+
+Every agent should update this file whenever they learn something important. This creates a feedback loop where discoveries help future agents.
+
 ## What to Document
 
 - Build & test commands
