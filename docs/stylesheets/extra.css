@@ -1,0 +1,71 @@
+:root {
+  --md-primary-fg-color: #1b5e20;
+  --md-primary-fg-color--light: #2e7d32;
+  --md-primary-fg-color--dark: #0f3d16;
+  --md-accent-fg-color: #66bb6a;
+  --md-default-bg-color: #e8f5e9;
+  --md-default-fg-color: #2e7d32;
+  --md-default-fg-color--light: #388e3c;
+  --md-typeset-a-color: #2e7d32;
+}
+
+.md-header,
+.md-tabs {
+  background-color: #1b5e20;
+  background-image: url("../assets/trees.jpg");
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
+}
+
+.md-main {
+  background-color: #e8f5e9;
+}
+
+.md-content,
+.md-typeset {
+  color: #2e7d32;
+}
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+  color: #1b5e20;
+}
+
+.md-typeset h2 {
+  border-bottom: 2px solid #66bb6a;
+  padding-bottom: 0.4rem;
+}
+
+.md-typeset a {
+  color: #2e7d32;
+}
+
+.md-typeset a:hover {
+  color: #1b5e20;
+}
+
+.md-typeset .md-button {
+  background-color: #66bb6a;
+  color: #ffffff;
+  border: none;
+}
+
+.md-typeset .md-button:hover {
+  background-color: #57a05a;
+  color: #ffffff;
+}
+
+.md-typeset .md-button--primary {
+  background-color: #2e7d32;
+  color: #ffffff;
+}
+
+.md-typeset .md-button--primary:hover {
+  background-color: #1b5e20;
+  color: #ffffff;
+}

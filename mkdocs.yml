@@ -12,6 +12,13 @@ nav:
 theme:
   name: material
   favicon: assets/favicon.ico
+  palette:
+    - scheme: default
+      primary: green
+      accent: light green
+
+extra_css:
+  - stylesheets/extra.css
 
 plugins:
   - search
