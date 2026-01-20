@@ -102,6 +102,7 @@ Expected RSS outputs from a build:
 - If `python` is missing, use `python3`.
 - If RSS output is missing, ensure `mkdocs-rss-plugin` is installed and `match_path` points to `blog/posts/`.
 - If the header background image is missing, confirm `docs/assets/trees.jpg` and `docs/stylesheets/extra.css` paths.
+- If Pages serves the README/Jekyll site, check for the built-in `pages-build-deployment` workflow deploying from branch; it can override the MkDocs deployment. Ensure Pages source is set to GitHub Actions and trigger the MkDocs workflow after any branch build.
 
 ## Agent Tips
 
