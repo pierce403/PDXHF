@@ -1,0 +1,35 @@
+site_name: Portland Hacker Foundation
+site_description: PDXHF collects tax-deductible donations and funds microgrants for the Portland hacker community.
+site_url: https://pdxhf.org
+
+docs_dir: docs
+
+nav:
+  - Home: index.md
+  - Blog: blog/index.md
+  - Tags: tags.md
+
+theme:
+  name: material
+  favicon: assets/favicon.ico
+
+plugins:
+  - search
+  - blog
+  - tags
+  - rss:
+      match_path: blog/posts/.*
+      date_from_meta:
+        as_creation: date
+        as_update: date
+      categories:
+        - categories
+        - tags
+      use_material_blog: true
+      rss_feed_enabled: true
+      json_feed_enabled: false
+      use_git: false
+
+markdown_extensions:
+  - meta
+  - attr_list
