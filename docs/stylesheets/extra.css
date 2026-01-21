@@ -132,7 +132,7 @@ body {
 }
 
 .md-content__inner {
-  padding-top: 2rem;
+  padding-top: 0.75rem;
 }
 
 /* ===== Typography ===== */
@@ -213,7 +213,7 @@ body {
   flex-wrap: nowrap;
   gap: 0.75rem;
   align-items: center;
-  margin: 1.5rem 0;
+  margin: 0.75rem 0;
 }
 
 .button-row p {
@@ -517,7 +517,7 @@ html {
 /* ===== Hero Section ===== */
 .hero-section {
   text-align: center;
-  padding: 3rem 0 4rem;
+  padding: 1.5rem 0 2rem;
   max-width: 800px;
   margin: 0 auto;
 }
@@ -540,7 +540,7 @@ html {
 
 .hero-section .button-row {
   justify-content: center;
-  margin-top: 2rem;
+  margin-top: 0.75rem;
 }
 
 /* ===== Grid Layout ===== */
@@ -548,7 +548,7 @@ html {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
-  margin: 2rem 0;
+  margin: 0.75rem 0 2rem;
 }
 
 @media (min-width: 768px) {
