@@ -112,11 +112,13 @@ body {
   letter-spacing: -0.02em;
 }
 
-.md-header__button.md-rss {
+.md-header__button.md-rss,
+.md-header__button.md-github {
   color: var(--md-header-fg-color, #ffffff);
 }
 
-.md-header__button.md-rss:hover {
+.md-header__button.md-rss:hover,
+.md-header__button.md-github:hover {
   color: var(--md-primary-fg-color);
 }
 

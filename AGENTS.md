@@ -119,6 +119,7 @@ Expected RSS outputs from a build:
 
 - Keep homepage content and donation CTAs intact when editing copy.
 - Use short, readable blog posts with a clear date and tags.
+- Header icon buttons (RSS/GitHub) are injected by `docs/javascripts/extra.js` and wired via `mkdocs.yml` `extra_javascript`.
 
 ## How Agents Should Use This
 
