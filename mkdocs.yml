@@ -12,10 +12,34 @@ nav:
 theme:
   name: material
   favicon: assets/favicon.ico
+  font:
+    text: Inter
+    code: JetBrains Mono
   palette:
-    - scheme: default
-      primary: green
-      accent: light green
+    # Light mode - auto detect
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Dark mode - auto detect
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.tracking
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - content.code.copy
 
 extra_css:
   - stylesheets/extra.css
@@ -40,3 +64,8 @@ plugins:
 markdown_extensions:
   - meta
   - attr_list
+  - md_in_html
+  - pymdownx.superfences
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
