@@ -29,7 +29,7 @@ We are starting a blog to share grant updates, community news, and upcoming even
 <div class="card" markdown>
 ## :material-finance: Funding
 
-PDXHF collects **tax-deductible donations** to invest in a diversified portfolio (mostly VGT) for long-term sustainability. Be confident that your donation is going to a good cause.
+PDXHF collects **tax-deductible donations** to invest in a diversified portfolio for long-term sustainability. Be confident that your donation is going to a good cause.
 
 We allocate up to **5% of our treasury annually** for microgrants (~$1000) where a modest investment can lead to significant advancements ("Asymmetric Impact").
 </div>
@@ -40,7 +40,6 @@ We allocate up to **5% of our treasury annually** for microgrants (~$1000) where
 We thrive within Portland's vibrant scene, centered around **PDX Hackerspace (CTRL-H)**.
 
 *   **HACKLUNCH**: Monthly gatherings (2nd Wednesdays at noon).
-*   **Signal**: Our primary secure communication channel.
 
 Whether you're a seasoned hacker or new to the scene, our community welcomes you.
 </div>
@@ -56,15 +55,12 @@ Your contributions directly fund grants that empower local hackers and technolog
 <div class="card" markdown>
 ## :material-scale-balance: Values
 
-At PDXHF we value:
-
 *   **Diversity & Inclusion** for maximum impact
 *   **Human Rights** for all humans
 *   **Education & Localism**
 *   **Artistic Creativity**
 *   **General Portlandian Weirdness**
 
-We keep Portland a safe space for the creative work needed to build and grow.
 </div>
 
 </div>
