@@ -77,6 +77,12 @@ mkdocs serve
 mkdocs build --strict
 ```
 
+Convenience script:
+```bash
+./run.sh
+```
+`run.sh` creates `.venv` if needed, installs deps, runs `mkdocs build --strict`, then starts `mkdocs serve`.
+
 Expected RSS outputs from a build:
 - `site/feed_rss_created.xml`
 - `site/feed_rss_updated.xml`
