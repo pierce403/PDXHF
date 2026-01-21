@@ -109,6 +109,8 @@ Expected RSS outputs from a build:
 - If RSS output is missing, ensure `mkdocs-rss-plugin` is installed and `match_path` points to `blog/posts/`.
 - If `mkdocs build --strict` fails with deprecation warnings for `materialx.emoji.*`, update `mkdocs.yml` to use `material.extensions.emoji.twemoji` and `material.extensions.emoji.to_svg`.
 - If the header trees image disappears, ensure both `.md-header` and `.md-tabs` set `background` with `../assets/trees.jpg` (light/dark schemes).
+- If mobile layout looks too narrow, ensure `.md-sidebar--primary/secondary` are `position: fixed` at small widths so the sidebar doesn’t take horizontal space.
+- If CSS changes don’t appear in `mkdocs serve`, restart the dev server.
 - If the header background image is missing, confirm `docs/assets/trees.jpg` and `docs/stylesheets/extra.css` paths.
 - If Pages serves the README/Jekyll site, check for the built-in `pages-build-deployment` workflow deploying from branch; it can override the MkDocs deployment. Ensure Pages source is set to GitHub Actions and trigger the MkDocs workflow after any branch build.
 - If a redeploy is needed, a tiny commit + push can retrigger GitHub Actions; then re-run the MkDocs workflow if it remains queued.
