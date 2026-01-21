@@ -85,7 +85,7 @@ body {
 [data-md-color-scheme="slate"] .md-tabs {
   background:
     linear-gradient(135deg, rgba(21, 29, 25, 0.25) 0%, rgba(28, 38, 34, 0.55) 100%),
-    url("../assets/trees.jpg") center 35% / cover no-repeat;
+    url("../assets/trees.jpg") center 60% / cover no-repeat;
   background-blend-mode: multiply;
   border-bottom: 1px solid var(--pdxhf-border);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
@@ -95,7 +95,7 @@ body {
 [data-md-color-scheme="default"] .md-tabs {
   background:
     linear-gradient(180deg, rgba(27, 94, 32, 0.25) 0%, rgba(27, 94, 32, 0.55) 100%),
-    url("../assets/trees.jpg") center 35% / cover no-repeat;
+    url("../assets/trees.jpg") center 60% / cover no-repeat;
   background-blend-mode: multiply;
   border-bottom: 1px solid rgba(27, 94, 32, 0.3);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
