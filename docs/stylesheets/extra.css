@@ -637,12 +637,17 @@ html {
 
 @media (min-width: 1200px) {
   .md-grid {
-    max-width: 1200px;
+    max-width: 1600px;
+  }
+
+  .grid-container > .card:not(.full-width) {
+    aspect-ratio: 1 / 1;
+    overflow: auto;
   }
 }
 
 @media (min-width: 1600px) {
   .md-grid {
-    max-width: 1400px;
+    max-width: 1900px;
   }
 }
