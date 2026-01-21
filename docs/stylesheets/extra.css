@@ -645,7 +645,7 @@ html {
   }
 
   .grid-container > .card:not(.full-width) {
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 3 / 2;
     overflow: auto;
   }
 }
