@@ -634,3 +634,15 @@ html {
     grid-template-columns: 1fr;
   }
 }
+
+@media (min-width: 1200px) {
+  .md-grid {
+    max-width: 1200px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .md-grid {
+    max-width: 1400px;
+  }
+}
