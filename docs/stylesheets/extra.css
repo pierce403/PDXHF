@@ -112,6 +112,14 @@ body {
   letter-spacing: -0.02em;
 }
 
+.md-header__button.md-rss {
+  color: var(--md-header-fg-color, #ffffff);
+}
+
+.md-header__button.md-rss:hover {
+  color: var(--md-primary-fg-color);
+}
+
 .md-tabs {
   border-bottom: 1px solid var(--pdxhf-border);
 }
