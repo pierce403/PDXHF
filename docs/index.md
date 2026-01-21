@@ -8,7 +8,7 @@ Empowering the Portland hacker community through grants, education, and asymmetr
 </div>
 
 <div class="button-row" markdown>
-[:material-chat: Note on Signal](https://signal.group/#CjQKICe1IhiChi74GgLGJql1-YcUndkMvRtniTkAygWVlaSWEhAXFtsQRFJPPxtXyodsPbou){ .md-button }
+[:material-chat: Connect on Signal](https://signal.group/#CjQKICe1IhiChi74GgLGJql1-YcUndkMvRtniTkAygWVlaSWEhAXFtsQRFJPPxtXyodsPbou){ .md-button }
 [:material-pen: Apply for a Grant](https://docs.google.com/forms/d/e/1FAIpQLSfaRK_Q_D808wyhj5cFVxF1wO9nUbItCgGJQuCJyHfUzVUVjw/viewform){ .md-button }
 [:material-heart: Become a Sponsor](https://www.paypal.com/donate/?hosted_button_id=GP42Y6XNS8ZTA){ .md-button }
 </div>
