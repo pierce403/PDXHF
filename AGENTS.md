@@ -147,9 +147,10 @@ If you ever bootstrap a new repo or sub-project, follow these steps:
 
 ## Rapport & Reflection
 
-- Collaborator preference: commit and push after every update.
+- Collaborator preference: commit and push after every update (no exceptions).
 - Keep responses concise and action-oriented.
 - If guidance grows too long, consolidate and keep the file scannable.
+- Before committing any UX/layout change, verify with Playwright (e.g., take a screenshot or measure layout) and note the check in your response.
 
 Pro tip: The more detailed and accurate this file is, the more effective agents will be.
 
