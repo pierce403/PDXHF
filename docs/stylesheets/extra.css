@@ -90,7 +90,7 @@ body {
 [data-md-color-scheme="default"] .md-header {
   background:
     linear-gradient(180deg, rgba(27, 94, 32, 0.85) 0%, rgba(27, 94, 32, 0.95) 100%),
-    url('/assets/trees.jpg') center top / cover no-repeat;
+    url("../assets/trees.jpg") center top / cover no-repeat;
   border-bottom: 1px solid rgba(27, 94, 32, 0.3);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
