@@ -606,7 +606,11 @@ html {
 }
 
 .card p {
-  font-size: 0.9rem;
+  font-size: 0.55rem;
+}
+
+.card li {
+  font-size: 0.55rem;
 }
 
 /* ===== Feature / Blog Card ===== */
