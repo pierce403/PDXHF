@@ -49,7 +49,7 @@ Whether you're a seasoned hacker or new to the scene, our community welcomes you
 
 Your contributions directly fund grants that empower local hackers and technologists.
 
-**Become a sponsor today.** Monthly donations provide us with a stable foundation to plan and support more initiatives year-round.
+**[Become a sponsor today.](https://www.paypal.com/donate/?hosted_button_id=GP42Y6XNS8ZTA)** Monthly donations provide us with a stable foundation to plan and support more initiatives year-round.
 </div>
 
 <div class="card" markdown>
