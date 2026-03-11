@@ -131,13 +131,21 @@ If a reviewer has to work hard to understand your application, your odds go down
 
 Do not hide the core idea in a wall of text.
 
-## Ask for the right amount
+## Show that $1000 is enough to create real value
 
-Some applicants undershoot because they are afraid of asking for too much. Others overshoot without justifying it.
+Because the grant amount is fixed, the question is not how much you are asking for. The question is whether **$1000 is enough to make the project real**.
 
-Both can hurt you.
+A strong application makes that easy to believe.
 
-Ask for what the project actually needs. If there is a range of possible funding levels, say what happens at each level. That shows flexibility and makes partial funding easier.
+Show what the money unlocks:
+
+- the prototype you can finish
+- the workshop you can run
+- the equipment you can buy for shared use
+- the documentation or curriculum you can produce
+- the event or pilot you can actually execute
+
+The best proposals make it obvious that $1000 will turn into something concrete and useful.
 
 ## Treat the application like the first deliverable
 
