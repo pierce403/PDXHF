@@ -106,6 +106,8 @@ Expected RSS outputs from a build:
 ## Known Issues & Solutions
 
 - If `python` is missing, use `python3`.
+- There is currently no `.gitignore` in the repo. As of the March 11, 2026 content update, `site/` is committed on `main`, so local builds may modify tracked generated files instead of appearing as untracked output.
+- `.pages-update.json` may appear as an untracked repo-root file with `{"build_type": "workflow", "source": null}`; treat it as local Pages metadata unless the collaborator asks to track it.
 - If RSS output is missing, ensure `mkdocs-rss-plugin` is installed and `match_path` points to `blog/posts/`.
 - If `mkdocs build --strict` fails with deprecation warnings for `materialx.emoji.*`, update `mkdocs.yml` to use `material.extensions.emoji.twemoji` and `material.extensions.emoji.to_svg`.
 - If the header trees image disappears, ensure both `.md-header` and `.md-tabs` set `background` with `../assets/trees.jpg` (light/dark schemes).
