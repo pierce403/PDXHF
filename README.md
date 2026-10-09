@@ -62,9 +62,11 @@ secrets belong in GitHub. `.github/workflows/deploy.yml` now validates and saves
 build artifact only, with no Pages or Cloudflare deployment step.
 
 Git connection, workers.dev serving, custom-domain attachment, and registrar
-cutover require separate live verification. Initial Wrangler configuration has no
-custom routes; attach only the exact intended domain after its zone is ready and
-DNS preservation is verified. Keep the prior GitHub Pages deployment/source for
+cutover require separate live verification. Wrangler records only `pdxhf.org` as the exact
+custom domain route. Keep the initial route commit local until this zone is active
+after the verified DNS import and approved Namecheap delegation; then pushing
+`main` lets the native Git deployment provision the hostname. Public cutover
+requires separate DNS, certificate, and HTTPS verification. Keep the prior GitHub Pages deployment/source for
 rollback. Manual recovery must pause automatic builds and wait for active builds;
 verify recovery before re-enabling them.
 
