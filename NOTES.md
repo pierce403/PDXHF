@@ -20,3 +20,15 @@ Local validation passed: `npm install`, `npm run build`, and `npm run deploy:che
 - Route preparation does not prove zone activation, registrar delegation, certificate readiness, or live cutover. Those checks remain separate; no manual deployment overlaps native Builds.
 
 Validation: `npm run deploy:check` passed against the exact route configuration and unchanged existing assets; `git diff --check` passed. No full renderer rebuild was repeated for this routing-only change. No route commit was pushed and no domain/certificate operation was performed during preparation.
+
+## 2026-10-09: ordinary route child prepared
+
+- The preceding custom-domain parent `6a66f12d2830b4baedda349169fecea0a587dc4d` remained local and unpushed. The coordinator observed custom-domain error `100117` on Dean and Luminism with the same retained-apex-record design; no failed production custom-domain attempt is claimed for this repository.
+- Replaced only the route entry with `{"pattern": "pdxhf.org/*", "zone_name": "pdxhf.org"}`. Runtime compatibility, account, workers.dev, asset configuration, observability, package pins, content, and recovery files remain unchanged. This is a child commit; prior custom-route history is retained.
+- The original apex A values remain the preserved origin/recovery addresses. Their proxy status, an active zone, and an active edge certificate are prerequisites for the ordinary route. Proxying changes public DNS answers to Cloudflare addresses; this local task performs no DNS, Cloudflare, credential, or deployment mutation.
+- With no user Worker script (`main`) or `run_worker_first`, missing assets use generated root `404.html` and `404-page` for terminal 404 responses. No application fetch falls back to Pages. Removing/bypassing the route or disabling proxying can expose the retained origin; check existing routes and fail mode before release.
+- The route covers apex paths and queries, not `www`. Coordinator review/push, the exact native Git build, proxied DNS, certificate/TLS, public paths/search/feeds/404, and any `www` behavior remain separate release checks. No live release is claimed by local validation.
+
+Validation: `npm run build` completed the required locked strict MkDocs build; `npm run deploy:check` passed with pinned Wrangler 4.145.0; `git diff --check` passed. Generated root `404.html` is present. No push, manual deployment, DNS change, or new credential was performed.
+
+Sources: [ordinary routes](https://developers.cloudflare.com/workers/configuration/routing/routes/) and [static-site 404 handling](https://developers.cloudflare.com/workers/static-assets/routing/static-site-generation/).

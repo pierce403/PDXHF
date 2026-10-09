@@ -23,8 +23,8 @@
   },
   "routes": [
     {
-      "pattern": "pdxhf.org",
-      "custom_domain": true
+      "pattern": "pdxhf.org/*",
+      "zone_name": "pdxhf.org"
     }
   ]
 }

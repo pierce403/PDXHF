@@ -61,14 +61,27 @@ build, and deploy. Cloudflare retains its deployment credential; no Cloudflare
 secrets belong in GitHub. `.github/workflows/deploy.yml` now validates and saves a
 build artifact only, with no Pages or Cloudflare deployment step.
 
-Git connection, workers.dev serving, custom-domain attachment, and registrar
-cutover require separate live verification. Wrangler records only `pdxhf.org` as the exact
-custom domain route. Keep the initial route commit local until this zone is active
-after the verified DNS import and approved Namecheap delegation; then pushing
-`main` lets the native Git deployment provision the hostname. Public cutover
-requires separate DNS, certificate, and HTTPS verification. Keep the prior GitHub Pages deployment/source for
-rollback. Manual recovery must pause automatic builds and wait for active builds;
-verify recovery before re-enabling them.
+Wrangler records the ordinary Worker route `pdxhf.org/*`, scoped to zone
+`pdxhf.org`. It covers apex paths and query strings while retaining the
+original GitHub Pages apex A values in DNS management. The apex records must be
+proxied, the zone active, and its edge certificate ready before live verification.
+Native Git publishing manages this route; no custom-domain DNS replacement is
+requested by this configuration.
+
+This Worker has no `main` script. Its static assets and generated `404.html`
+provide a terminal 404 for missing paths with `not_found_handling: 404-page`.
+It does not fetch the retained Pages origin. That origin can become reachable
+again if the route is removed or bypassed, or proxying is disabled; inspect route
+conflicts and fail mode before release. Apex routing does not cover `www`.
+
+This child change remains local for coordinator review. See [NOTES](NOTES.md)
+for the custom-domain conflict and remaining deployment, DNS, certificate, HTTPS,
+and path checks. Preserve all original DNS/mail values and the previous Pages
+deployment/source for recovery. Manual recovery must pause automatic builds and
+wait for active builds, then verify recovery before re-enabling them.
+
+Cloudflare documents [ordinary-route prerequisites](https://developers.cloudflare.com/workers/configuration/routing/routes/)
+and [static-site 404 handling](https://developers.cloudflare.com/workers/static-assets/routing/static-site-generation/).
 
 Wrangler logs and traces are enabled, but asset-only requests bypass Worker
 execution. Use Cloudflare HTTP analytics for those requests.

@@ -163,7 +163,8 @@ Remember: small, specific updates compound over time and make future handoffs ea
 
 - Worker `pdxhf` publishes only `.cloudflare/site/`, leaving legacy `site/` untouched. Use `npm ci`, `npm run build`, and `npm run deploy:check`; strict MkDocs uses the baseline renderer versions in `requirements.lock`.
 - Native Git settings: `pierce403/PDXHF`, production `main`, root `/`, build `npm run build`, deploy `npx wrangler deploy`, paths `*`. GitHub Actions validates only; credentials stay in Cloudflare, with no GitHub Cloudflare secrets.
-- Wrangler records only `pdxhf.org` as a custom domain route. Publish this initial route commit only after its zone is active following verified DNS import and the approved registrar delegation. Native Git provisions the hostname; connection, exact deployment, certificate, DNS, and public behavior still require independent verification.
+- Wrangler records the ordinary route `pdxhf.org/*` with `zone_name: pdxhf.org`. Retain the original apex A values and all mail/TXT/unrelated records; proxying the apex must send traffic through Cloudflare. The coordinator owns the reviewed push and live changes. Verify the active zone, edge certificate, exact native build, HTTPS, paths, and any separate `www` behavior.
+- Keep this configuration without `main` or `run_worker_first`: generated root `404.html` and `not_found_handling: 404-page` produce terminal missing-page responses. There is no application fetch of the Pages origin. Route bypass/removal, proxy disablement, or a changed fail mode can expose the retained origin and require review.
 - Preserve canonical URL, existing public paths and standalone HTML, search, feeds, robots behavior, unrelated DNS/mail records, and prior Pages recovery source. Asset-only requests do not emit Worker invocation logs.
 - Do not overlap manual and native Git deployment. Pause automatic builds and wait before deliberate recovery; verify before re-enabling them.
 
