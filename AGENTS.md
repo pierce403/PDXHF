@@ -52,7 +52,7 @@ PDXHF is a static website built with MkDocs Material. The homepage and content l
 - MkDocs Material theme
 - Material blog + tags plugins
 - `mkdocs-rss-plugin` for blog-only RSS
-- GitHub Pages deployment via official upload-artifact + deploy-pages workflow
+- Cloudflare Workers Static Assets prepared; GitHub Actions validates only; prior Pages deployment retained for recovery
 
 ## Project Structure
 
@@ -64,7 +64,7 @@ PDXHF is a static website built with MkDocs Material. The homepage and content l
 - `docs/stylesheets/extra.css`: site theming to match original colors
 - `mkdocs.yml`: site config, theme, plugins, RSS
 - `requirements.txt`: pinned Python deps
-- `.github/workflows/deploy.yml`: Pages build + deploy
+- `.github/workflows/deploy.yml`: strict build + Wrangler validation + artifact retention
 - `docs/CNAME`: custom domain (root `CNAME` may exist too)
 
 ## Build & Test Commands
@@ -99,14 +99,14 @@ Expected RSS outputs from a build:
 
 ## Deployment Notes
 
-- GitHub Actions workflow builds on push to default branch and deploys to Pages.
+- GitHub Actions validates pushes to `main`; Cloudflare native Git builds will publish after their connection is verified.
 - `site_url` in `mkdocs.yml` must match the custom domain for a valid RSS feed.
 - `docs/CNAME` is copied into the build output to preserve the custom domain.
 
 ## Known Issues & Solutions
 
 - If `python` is missing, use `python3`.
-- There is currently no `.gitignore` in the repo. As of the March 11, 2026 content update, `site/` is committed on `main`, so local builds may modify tracked generated files instead of appearing as untracked output.
+- Historical `site/` is tracked on `main`; legacy local builds may modify generated recovery files. The Cloudflare build now writes only ignored `.cloudflare/site/`, with dependencies and secrets also ignored by the new `.gitignore`.
 - `.pages-update.json` may appear as an untracked repo-root file with `{"build_type": "workflow", "source": null}`; treat it as local Pages metadata unless the collaborator asks to track it.
 - If RSS output is missing, ensure `mkdocs-rss-plugin` is installed and `match_path` points to `blog/posts/`.
 - If `mkdocs build --strict` fails with deprecation warnings for `materialx.emoji.*`, update `mkdocs.yml` to use `material.extensions.emoji.twemoji` and `material.extensions.emoji.to_svg`.
@@ -158,3 +158,13 @@ If you ever bootstrap a new repo or sub-project, follow these steps:
 Pro tip: The more detailed and accurate this file is, the more effective agents will be.
 
 Remember: small, specific updates compound over time and make future handoffs easier.
+
+## Cloudflare migration lessons (2026-10-09)
+
+- Worker `pdxhf` publishes only `.cloudflare/site/`, leaving legacy `site/` untouched. Use `npm ci`, `npm run build`, and `npm run deploy:check`; strict MkDocs uses the baseline renderer versions in `requirements.lock`.
+- Native Git settings: `pierce403/PDXHF`, production `main`, root `/`, build `npm run build`, deploy `npx wrangler deploy`, paths `*`. GitHub Actions validates only; credentials stay in Cloudflare, with no GitHub Cloudflare secrets.
+- Initial config intentionally has no custom routes. Connection, workers.dev, exact custom domain, DNS import, nameservers, and public behavior must be verified independently; preparation alone is not a completed cutover.
+- Preserve canonical URL, existing public paths and standalone HTML, search, feeds, robots behavior, unrelated DNS/mail records, and prior Pages recovery source. Asset-only requests do not emit Worker invocation logs.
+- Do not overlap manual and native Git deployment. Pause automatic builds and wait before deliberate recovery; verify before re-enabling them.
+
+- Compatibility date is `2026-10-07`, the newest date supported by the bundled workerd in pinned Wrangler 4.145.0. A `2026-10-09` local runtime refused startup; this asset-only configuration uses the supported date so development and validation exercise the configured runtime. Review compatibility changes before advancing it with a future Wrangler update.

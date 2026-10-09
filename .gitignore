@@ -1,0 +1,10 @@
+
+
+# Cloudflare build dependencies and isolated output
+node_modules/
+.venv/
+.cloudflare/
+.wrangler/
+.env*
+.dev.vars*
+__pycache__/

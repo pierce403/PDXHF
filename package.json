@@ -1,0 +1,13 @@
+{
+  "name": "pdxhf",
+  "private": true,
+  "scripts": {
+    "build": "bash scripts/build-cloudflare.sh",
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "deploy:check": "wrangler deploy --dry-run"
+  },
+  "devDependencies": {
+    "wrangler": "4.145.0"
+  }
+}
