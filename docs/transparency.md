@@ -2,43 +2,24 @@
 
 Portland Hacker Foundation is a 501(c)(3) nonprofit supporting the Portland hacker community through grants, education, and community infrastructure.
 
-This page is here to make the organization easier to understand and easier to trust.
+Follow the foundation's decisions, funding, and organizational updates through the records below.
 
-## What belongs here
+## Meeting summaries { #governance }
 
-Over time, this section should link to the key organizational documents people may reasonably want to review, including:
+[Read the meeting summaries](blog/category/meeting-summaries.md){ .md-button }
 
-- IRS determination letter
-- annual tax filings (Form 990 / 990-EZ / 990-N history, as applicable)
-- governing documents such as bylaws
-- conflict of interest policy, if adopted
-- board and officer information
-- grant process notes or governance summaries
+These summaries cover board decisions, grant approvals, and organizational updates. Each post shows the meeting date and publication date. They are curated public summaries of the meeting notes.
 
-## Governance
+## Funding decisions
 
-PDXHF exists to direct resources into projects that strengthen the Portland hacker community.
+[View the grants timeline](grants/index.md){ .md-button }
 
-That includes funding for open source tools, education, events, shared infrastructure, and other work that creates durable value beyond a single individual project.
+The timeline describes the funded work, explains why PDXHF supported it, and links to the relevant meeting summary. Entries show approval dates or an explicitly labeled payment date.
 
-The [grants timeline](grants/index.md) lists published awards, the projects they support, and why PDXHF chose to fund them.
-
-[Meeting summaries](blog/category/meeting-summaries.md) record public decisions and organizational updates, including grant approvals. Each summary is dated to its meeting and states when it was published.
-
-As this site evolves, this page can also link to:
-
-- annual reports
-- grant decision process notes
-- sponsorship and donation transparency information
+[Small grants, big impact](blog/posts/small-grants-big-impact.md) explains the foundation's funding approach and how to apply.
 
 ## Documents
 
-A documents directory is being prepared under [`/documents/`](documents/README.md).
+The IRS determination letter, annual filings, bylaws, and board and officer information have not yet been published on this site.
 
-That directory is the best place to upload PDFs and source files first. Once the documents are in place, we can add cleaner public links from this page and the main site navigation.
-
-## Why this matters
-
-Good nonprofit infrastructure is not just about legal compliance. It is also about legibility.
-
-The easier it is for people to understand how the foundation works, the easier it is for donors, applicants, and community members to trust it.
+The [February 11, 2026 meeting summary](blog/posts/meeting-2026-02-11.md#organizational-work) records completion of the CT-12 and 990-N filings on that date. The summary provides a filing update; copies of those filings are not yet available here.
