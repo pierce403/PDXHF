@@ -59,6 +59,7 @@ PDXHF is a static website built with MkDocs Material. The homepage and content l
 - `docs/index.md`: homepage content and CTAs
 - `docs/blog/index.md`: blog landing page
 - `docs/blog/posts/`: individual blog posts (Markdown with front matter)
+- `docs/grants/index.md`: public grants page and future approval-date timeline
 - `docs/tags.md`: tag index page (`<!-- material/tags -->`)
 - `docs/assets/`: images + favicon
 - `docs/stylesheets/extra.css`: site theming to match original colors
@@ -77,6 +78,8 @@ mkdocs serve
 mkdocs build --strict
 ```
 
+For a local check that leaves tracked legacy `site/` untouched, use `mkdocs build --strict --clean --site-dir /tmp/pdxhf-site-check` after installing the locked dependencies.
+
 Convenience script:
 ```bash
 ./run.sh
@@ -91,11 +94,12 @@ Expected RSS outputs from a build:
 
 - Blog posts require YAML front matter with `title`, `date` (YYYY-MM-DD), optional `categories`, and `tags`.
 - CTA buttons on the homepage use `{ .md-button }` and `{ .md-button--primary }`.
+- Grants belong on one page, newest first by approval date and grouped by year. `README.md` has the entry markup for the existing CSS timeline; each published entry needs a checked project URL, short description, and public funding rationale.
 
 ## Dependencies
 
-- Pinned in `requirements.txt` (notably `mkdocs==1.6.1`, `mkdocs-material==9.7.1`, `mkdocs-rss-plugin==1.17.9`).
-- CI uses Python 3.12; local Python 3.x works (use `python3`).
+- The Cloudflare build installs `requirements.lock` (notably `mkdocs==1.6.1`, `mkdocs-material==9.7.7`, `mkdocs-rss-plugin==1.17.9`); `requirements.txt` supports the legacy helper workflow.
+- CI reads `.python-version` (currently Python 3.14.4); use `python3` locally and match that version when possible.
 
 ## Deployment Notes
 
@@ -114,14 +118,16 @@ Expected RSS outputs from a build:
 - If mobile layout looks too narrow, ensure `.md-sidebar--primary/secondary` are `position: fixed` at small widths so the sidebar doesn’t take horizontal space.
 - If CSS changes don’t appear in `mkdocs serve`, restart the dev server.
 - If the header background image is missing, confirm `docs/assets/trees.jpg` and `docs/stylesheets/extra.css` paths.
-- If Pages serves the README/Jekyll site, check for the built-in `pages-build-deployment` workflow deploying from branch; it can override the MkDocs deployment. Ensure Pages source is set to GitHub Actions and trigger the MkDocs workflow after any branch build.
-- If a redeploy is needed, a tiny commit + push can retrigger GitHub Actions; then re-run the MkDocs workflow if it remains queued.
+- GitHub Actions currently validates and retains an artifact; it does not publish. After a push, check the Cloudflare native Git build and the public route before reporting a live update. The retained Pages source is recovery material.
+- If local pip or npm installation reports `Errno 122` despite free filesystem space, treat it as a host quota limit. A strict build with a separately verified locked Python environment can still check Markdown; rely on CI for the pinned Node package build if local installation remains blocked.
 
 ## Agent Tips
 
 - Keep homepage content and donation CTAs intact when editing copy.
 - Use short, readable blog posts with a clear date and tags.
 - Header icon buttons (RSS/GitHub) are injected by `docs/javascripts/extra.js` and wired via `mkdocs.yml` `extra_javascript`.
+- Keep the Grants placeholder public until approved award records are supplied. Do not invent grants, recipients, amounts, project links, or decision rationales.
+- For grant layout QA, build a temporary copy of the docs with a sample entry outside this repo. Playwright component checks with the real stylesheet at 1280×900 and 390×844 in light/dark mode passed without horizontal overflow; full-page browser rendering crashed on the 2026-10-14 host, so that check remains narrower than a live-page test.
 
 ## How Agents Should Use This
 

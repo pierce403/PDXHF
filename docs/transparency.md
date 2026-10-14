@@ -21,6 +21,8 @@ PDXHF exists to direct resources into projects that strengthen the Portland hack
 
 That includes funding for open source tools, education, events, shared infrastructure, and other work that creates durable value beyond a single individual project.
 
+The [grants timeline](grants/index.md) will show each published award, the project it supports, and why PDXHF chose to fund it.
+
 As this site evolves, this page can also link to:
 
 - board meeting summaries or approved minutes

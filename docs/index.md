@@ -32,6 +32,8 @@ We are starting a blog to share grant updates, community news, and upcoming even
 PDXHF collects **tax-deductible donations** to invest in a diversified portfolio for long-term sustainability. Be confident that your donation is going to a good cause.
 
 We allocate up to **5% of our treasury annually** for microgrants (~$1000) where a modest investment can lead to significant advancements ("Asymmetric Impact").
+
+[See the grants timeline](grants/index.md)
 </div>
 
 <div class="card" markdown>

@@ -412,6 +412,39 @@ body {
   border-color: var(--pdxhf-border);
 }
 
+/* ===== Grant Timeline ===== */
+
+.grant-timeline {
+  border-left: 2px solid var(--pdxhf-border);
+  margin: 0.75rem 0 2rem 0.35rem;
+  padding-left: 1.5rem;
+}
+
+.grant-entry {
+  position: relative;
+  padding: 0.1rem 0 1.25rem;
+}
+
+.grant-entry:last-child {
+  padding-bottom: 0;
+}
+
+.grant-entry::before {
+  content: '';
+  position: absolute;
+  top: 0.75rem;
+  left: calc(-1.5rem - 0.4rem);
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 50%;
+  background: var(--md-primary-fg-color);
+  border: 2px solid var(--pdxhf-bg-dark);
+}
+
+.grant-entry h3 {
+  margin-top: 0.3rem;
+}
+
 /* ===== Blog Cards ===== */
 
 .md-post {

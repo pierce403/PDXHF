@@ -34,6 +34,34 @@ Notes:
 - `date` should be in `YYYY-MM-DD` format. The RSS plugin uses this for both created and updated dates, so bump it if you want the update reflected in the feed.
 - Preview locally with `mkdocs serve` or run `mkdocs build --strict` before pushing.
 
+## Grant timeline
+
+Publish approved awards on `docs/grants/index.md`, newest first by **approval date** and grouped under year headings. Use one `.grant-timeline` wrapper per year and repeat `.grant-entry` for each award. Replace the placeholder paragraphs when the first award is published. Do not publish a grant until its date, project URL, description, and public rationale have been checked. Amounts and recipient names are not required.
+
+Copy this structure into the page when an award is ready to publish, replacing every uppercase placeholder:
+
+```markdown
+## APPROVAL_YEAR
+
+<div class="grant-timeline" markdown>
+<article class="grant-entry" markdown>
+
+### PROJECT_NAME { #grant-YYYY-project-slug }
+
+**Approved:** Month D, YYYY
+
+**Project:** [Visit the funded project](PROJECT_URL)
+
+**What it does:** One or two sentences about the project.
+
+**Why we funded it:** A short, public explanation of the decision.
+
+</article>
+</div>
+```
+
+Keep each heading ID stable so existing links to an award continue to work. Add more `<article class="grant-entry">` blocks inside the same year wrapper, and link to the project's official site, repository, or event page. The grants timeline is separate from blog posts and their RSS feed.
+
 ## RSS feed
 
 The blog RSS feed is published at `https://pdxhf.org/feed_rss_created.xml` after deployment. (Only blog posts are included.)
