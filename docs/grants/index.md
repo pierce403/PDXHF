@@ -106,6 +106,8 @@ Dates below are approval dates. Project descriptions explain the work supported;
 
 **Approval date:** Pending verification.
 
+**Payment sent:** September 10, 2025
+
 <!-- TODO: Add the verified Tails approval date and move this entry into the correct year. Do not use the submission or payment-record date as its approval date. -->
 
 **Project:** Project link not yet available.
