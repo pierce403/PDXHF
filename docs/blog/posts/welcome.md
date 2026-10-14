@@ -1,6 +1,8 @@
 ---
 title: Welcome to the PDXHF blog
-date: 2026-01-20
+date:
+  created: 2026-01-20
+  updated: 2026-01-20
 categories:
   - Announcements
 tags:

@@ -21,11 +21,12 @@ PDXHF exists to direct resources into projects that strengthen the Portland hack
 
 That includes funding for open source tools, education, events, shared infrastructure, and other work that creates durable value beyond a single individual project.
 
-The [grants timeline](grants/index.md) will show each published award, the project it supports, and why PDXHF chose to fund it.
+The [grants timeline](grants/index.md) lists published awards, the projects they support, and why PDXHF chose to fund them.
+
+[Meeting summaries](blog/category/meeting-summaries.md) record public decisions and organizational updates, including grant approvals. Each summary is dated to its meeting and states when it was published.
 
 As this site evolves, this page can also link to:
 
-- board meeting summaries or approved minutes
 - annual reports
 - grant decision process notes
 - sponsorship and donation transparency information

@@ -1,6 +1,8 @@
 ---
 title: Thanks for coming to our FOIA party!
-date: 2026-03-11
+date:
+  created: 2026-03-11
+  updated: 2026-03-11
 categories:
   - Announcements
 tags:

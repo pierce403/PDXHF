@@ -52,7 +52,7 @@ PDXHF is a static website built with MkDocs Material. The homepage and content l
 - MkDocs Material theme
 - Material blog + tags plugins
 - `mkdocs-rss-plugin` for blog-only RSS
-- Cloudflare Workers Static Assets prepared; GitHub Actions validates only; prior Pages deployment retained for recovery
+- Cloudflare Workers Static Assets publishes via native Git builds; GitHub Actions validates only; prior Pages deployment retained for recovery
 
 ## Project Structure
 
@@ -92,9 +92,9 @@ Expected RSS outputs from a build:
 
 ## Coding Conventions
 
-- Blog posts require YAML front matter with `title`, `date` (YYYY-MM-DD), optional `categories`, and `tags`.
+- Blog posts use YAML front matter with `title`, `date.created` and `date.updated` (YYYY-MM-DD), optional `categories`, and `tags`. Meeting summaries are dated to meetings, with actual public release dates in `updated` and in the body. Stable slugs prevent title edits from changing URLs.
 - CTA buttons on the homepage use `{ .md-button }` and `{ .md-button--primary }`.
-- Grants belong on one page, newest first by approval date and grouped by year. `README.md` has the entry markup for the existing CSS timeline; each published entry needs a checked project URL, short description, and public funding rationale.
+- Grants belong on one page, newest first by approval date and grouped by year. `README.md` documents timeline markup and reciprocal links to award sections in meeting posts. Each entry needs a reviewed description and public rationale; a missing project URL is visibly marked. Tails stays under Approval date pending until a verified date is supplied.
 
 ## Dependencies
 
@@ -103,7 +103,7 @@ Expected RSS outputs from a build:
 
 ## Deployment Notes
 
-- GitHub Actions validates pushes to `main`; Cloudflare native Git builds will publish after their connection is verified.
+- GitHub Actions validates pushes to `main`; Cloudflare native Git builds publish them. Verify the exact Cloudflare build and public pages after pushing.
 - `site_url` in `mkdocs.yml` must match the custom domain for a valid RSS feed.
 - `docs/CNAME` is copied into the build output to preserve the custom domain.
 
@@ -126,8 +126,8 @@ Expected RSS outputs from a build:
 - Keep homepage content and donation CTAs intact when editing copy.
 - Use short, readable blog posts with a clear date and tags.
 - Header icon buttons (RSS/GitHub) are injected by `docs/javascripts/extra.js` and wired via `mkdocs.yml` `extra_javascript`.
-- Keep the Grants placeholder public until approved award records are supplied. Do not invent grants, recipients, amounts, project links, or decision rationales.
-- For grant layout QA, build a temporary copy of the docs with a sample entry outside this repo. Playwright component checks with the real stylesheet at 1280×900 and 390×844 in light/dark mode passed without horizontal overflow; full-page browser rendering crashed on the 2026-10-14 host, so that check remains narrower than a live-page test.
+- Publish only reviewed award records. Do not invent grants, dates, recipients, amounts, project links, or completed deliverables. The current public rationales are reviewed editorial statements; the raw meeting notes do not record board rationales.
+- For grant layout QA, build an isolated temporary copy outside this repo. Full-page Playwright checks at 1280×900 and 390×844 in light/dark mode now pass with cached Chromium headless shell 1248. Check the rendered timeline and meeting/category pages before committing.
 
 ## How Agents Should Use This
 
@@ -181,3 +181,15 @@ Remember: small, specific updates compound over time and make future handoffs ea
 - Miniflare pins its transitive sharp dependency exactly. A sharp-only `overrides.sharp` at `0.35.5` fixes GHSA-wq5f-xc86-pv6w while retaining pinned Wrangler; regenerate the npm lockfile so matching sharp binaries and libvips packages also update. Use the sharp-only form: a nested Miniflare override can produce an invalid `npm ci` tree on npm 10. Remove the override once the parent dependency supplies a patched version.
 - Keep urllib3 in both `requirements.txt` and build-time `requirements.lock` at `2.7.0` or newer for GHSA-mf9v-mfxr-j63j and GHSA-qccp-gfcp-xxvc. Validate with the strict Cloudflare build and `.venv/bin/python -m pip check`.
 - In restricted environments, use a writable `XDG_CONFIG_HOME` for Wrangler dry-runs; missing/unwritable home configuration can otherwise fail before validation. `npm ci`, `npm audit`, sharp SVG-to-PNG conversion, strict MkDocs, pip check, and Wrangler dry-run passed for this update on Node 24.19.0/Python 3.12.14; CI checks the repository-pinned Python version.
+
+## Meeting and grant publication lessons (2026-10-14)
+
+- Meeting summaries and grant approvals share backdated blog posts. Use `Meeting summaries` on all meeting posts and add `Grants` on approval/funding updates; one meeting can contain multiple separately anchored awards. Link Transparency to `blog/category/meeting-summaries.md`, which Material generates and MkDocs resolves.
+- `use_material_blog: true` in RSS 1.17.9 does not extract Material date mappings. Set `date_from_meta.as_creation: date.created` and `as_update: date.updated`; a whole `date` mapping otherwise falls back to build time. Normalize existing posts when changing the keys, keeping their original creation/update dates.
+- Preserve the creation date and explicit post slug for stable dated URLs. Update only `date.updated` for later edits; the old README advice to bump a scalar date would change the permalink.
+- Collaboration preference for this backfill: review one packet containing exact meeting summaries and grant copy before pushing to the publishing branch. Keep unapproved drafts in an isolated temporary source tree, then commit/push the approved copy as one focused update.
+- The Tails payment record does not establish its approval date. Keep visible date-pending text and a source TODO; do not backfill from a submission timestamp or payment meeting.
+
+- Full-page Playwright checks now work with the cached newer headless shell. The existing mobile width override made `.md-content__inner` span the viewport plus Material margins, causing 16px overflow at 390px. Keep the outer content width at 100% but the inner article width at auto so margins fit.
+- The 15-summary/six-grant preview passed 214 HTML/RSS checks and 16 Playwright cases across homepage, timeline, two-award meeting post, and category in desktop/mobile light/dark modes. Both feeds contain 18 blog items; creation dates are meetings and update dates are release dates.
+- The April 2025 summary follows the source filename (April 10); timestamps suggest April 9 but the body has no date. A source TODO preserves this unresolved discrepancy for later confirmation.

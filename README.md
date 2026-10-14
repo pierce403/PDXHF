@@ -13,32 +13,46 @@ mkdocs serve
 
 ## Blog posts
 
-Add new posts in `docs/blog/posts/` using YAML front matter, for example:
+Add posts in `docs/blog/posts/` with YAML front matter:
 
 ```markdown
 ---
-title: Post title
-date: 2026-01-20
+title: "Meeting summary: May 13, 2026"
+date:
+  created: 2026-05-13
+  updated: 2026-10-14
+slug: meeting-summary
 categories:
-  - Announcements
+  - Meeting summaries
 tags:
-  - community
-  - grants
+  - minutes
+  - governance
 ---
 
-Write your post here.
+Meeting held on May 13, 2026. Published on October 14, 2026.
+
+A short summary of the recorded discussion.
+
+<!-- more -->
+
+## Recorded discussion
+
+Public decisions and organizational updates.
 ```
 
-Notes:
-- Use a short, descriptive filename like `welcome-to-the-pdxhf-blog.md`.
-- `date` should be in `YYYY-MM-DD` format. The RSS plugin uses this for both created and updated dates, so bump it if you want the update reflected in the feed.
-- Preview locally with `mkdocs serve` or run `mkdocs build --strict` before pushing.
+- Meeting summaries use the actual meeting date as `date.created` and the public release date as `date.updated`. State both dates in the body. For later edits, change only `updated`; changing `created` changes the dated permalink.
+- Use a stable `slug`. Meeting posts use `meeting-summary`, which produces `/blog/YYYY/MM/DD/meeting-summary/`. Filenames follow `meeting-YYYY-MM-DD.md`.
+- Use the `Meeting summaries` category for every meeting post. Add `Grants` and the `grants` tag where the post includes an approval or funding update. Each award has a stable heading ID linking to its timeline entry.
+- Use a short introduction followed by `<!-- more -->` to keep blog/category pages readable.
+- Keep summaries concise and source-faithful; omit private meeting material. Descriptions of proposed work must not claim completed results. Public rationales are editorial copy approved for publication, not quotations of unrecorded board reasoning.
+- For historical backfills, prepare and review the exact copy before adding it to the publishing branch. The public release date must match the approved release day.
+- Preview with `mkdocs serve` or run a strict build to a temporary directory before pushing.
 
 ## Grant timeline
 
-Publish approved awards on `docs/grants/index.md`, newest first by **approval date** and grouped under year headings. Use one `.grant-timeline` wrapper per year and repeat `.grant-entry` for each award. Replace the placeholder paragraphs when the first award is published. Do not publish a grant until its date, project URL, description, and public rationale have been checked. Amounts and recipient names are not required.
+Keep awards on `docs/grants/index.md`, newest first by **approval date** and grouped by year. Each dated award links to its approval section in a meeting-summary post, which links back to the stable timeline anchor. Keep descriptions and rationales consistent in both places.
 
-Copy this structure into the page when an award is ready to publish, replacing every uppercase placeholder:
+Use one `.grant-timeline` wrapper per year and repeat `.grant-entry`:
 
 ```markdown
 ## APPROVAL_YEAR
@@ -50,21 +64,27 @@ Copy this structure into the page when an award is ready to publish, replacing e
 
 **Approved:** Month D, YYYY
 
-**Project:** [Visit the funded project](PROJECT_URL)
+**Project:** [Visit the funded project](VERIFIED_PROJECT_URL)
 
-**What it does:** One or two sentences about the project.
+**What it does:** A short description of the funded scope.
 
-**Why we funded it:** A short, public explanation of the decision.
+**Why we funded it:** The reviewed public explanation of the decision.
+
+[Approval summary](../blog/posts/meeting-YYYY-MM-DD.md#grant-YYYY-project-slug)
 
 </article>
 </div>
 ```
 
-Keep each heading ID stable so existing links to an award continue to work. Add more `<article class="grant-entry">` blocks inside the same year wrapper, and link to the project's official site, repository, or event page. The grants timeline is separate from blog posts and their RSS feed.
+- If no verified project URL exists, use `**Project:** Project link not yet available.` Do not substitute an upstream reference, applicant profile, or guessed URL.
+- Awards can be listed after approval even when payment is unconfirmed. Amounts and recipient names are omitted unless explicitly approved for publication.
+- The Tails workshop is an approved editorial exception: it belongs under **Approval date pending** with a source TODO until its approval date is verified. The September 10, 2025 meeting post is a payment update; neither that date nor the submission date is an approval date.
+- Keep all heading IDs stable. Update a grant's timeline and blog section together when adding links or correcting reviewed copy.
+- Grant pages do not enter RSS; their meeting-summary posts do.
 
 ## RSS feed
 
-The blog RSS feed is published at `https://pdxhf.org/feed_rss_created.xml` after deployment. (Only blog posts are included.)
+The blog RSS feed is published at `https://pdxhf.org/feed_rss_created.xml` after deployment. Only blog posts are included, including meeting summaries and their grant announcements. `mkdocs.yml` reads `date.created` for the creation feed and `date.updated` for the updated feed.
 
 ## Cloudflare publishing
 

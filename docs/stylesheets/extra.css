@@ -718,10 +718,14 @@ html {
     height: 100%;
   }
 
-  .md-content,
-  .md-content__inner {
+  .md-content {
     width: 100% !important;
     max-width: 100% !important;
+  }
+
+  .md-content__inner {
+    width: auto !important;
+    max-width: none !important;
   }
 }
 
