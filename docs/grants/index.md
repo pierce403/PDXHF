@@ -2,7 +2,7 @@
 
 PDXHF funds projects that create lasting value for the Portland hacker community.
 
-Dates below are approval dates. Project descriptions explain the work supported; the linked meeting summaries record decisions and reported updates.
+Entries are ordered by approval date, or by the labeled payment date when an approval date is not recorded. Project descriptions explain the work supported; the linked meeting summaries record decisions and reported updates.
 
 ## 2026
 
@@ -64,6 +64,24 @@ Dates below are approval dates. Project descriptions explain the work supported;
 
 <article class="grant-entry" markdown>
 
+### Tails USB workshops { #grant-tails-usb }
+
+**Payment sent:** September 10, 2025
+
+<!-- TODO: Verify the Tails approval date from an approved source; until then, order this entry by its labeled payment date. Do not use the submission or payment-record date as its approval date. -->
+
+**Project:** Project link not yet available.
+
+**What it does:** Offer free workshops on installing and using Tails on USB drives, connecting through Tor, and understanding the tool’s privacy limits.
+
+**Why we funded it:** Free, hands-on privacy education lowers barriers to learning how to use privacy tools and understand their limits.
+
+[Funding update](../blog/posts/meeting-2025-09-10.md#grant-tails-usb)
+
+</article>
+
+<article class="grant-entry" markdown>
+
 ### Cellebrite kit reverse engineering { #grant-2025-cellebrite }
 
 **Approved:** February 12, 2025
@@ -91,32 +109,6 @@ Dates below are approval dates. Project descriptions explain the work supported;
 **Why we funded it:** Research into school monitoring systems can help community members understand surveillance technology in educational settings.
 
 [Approval summary](../blog/posts/meeting-2025-02-12.md#grant-2025-halo)
-
-</article>
-
-</div>
-
-## Approval date pending
-
-<div class="grant-timeline" markdown>
-
-<article class="grant-entry" markdown>
-
-### Tails USB workshops { #grant-tails-usb }
-
-**Approval date:** Pending verification.
-
-**Payment sent:** September 10, 2025
-
-<!-- TODO: Add the verified Tails approval date and move this entry into the correct year. Do not use the submission or payment-record date as its approval date. -->
-
-**Project:** Project link not yet available.
-
-**What it does:** Offer free workshops on installing and using Tails on USB drives, connecting through Tor, and understanding the tool’s privacy limits.
-
-**Why we funded it:** Free, hands-on privacy education lowers barriers to learning how to use privacy tools and understand their limits.
-
-[Funding update](../blog/posts/meeting-2025-09-10.md#grant-tails-usb)
 
 </article>
 

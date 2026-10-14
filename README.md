@@ -78,7 +78,7 @@ Use one `.grant-timeline` wrapper per year and repeat `.grant-entry`:
 
 - If no verified project URL exists, use `**Project:** Project link not yet available.` Do not substitute an upstream reference, applicant profile, or guessed URL.
 - Awards can be listed after approval even when payment is unconfirmed. Amounts and recipient names are omitted unless explicitly approved for publication.
-- The Tails workshop is an approved editorial exception: it belongs under **Approval date pending** with a source TODO until its approval date is verified. The September 10, 2025 meeting post is a payment update; neither that date nor the submission date is an approval date.
+- The Tails workshop is ordered within 2025 by its confirmed September 10 payment date, labeled **Payment sent**. Keep the source TODO for its approval date in an HTML comment; do not present the payment or submission date as an approval date.
 - Keep all heading IDs stable. Update a grant's timeline and blog section together when adding links or correcting reviewed copy.
 - Grant pages do not enter RSS; their meeting-summary posts do.
 

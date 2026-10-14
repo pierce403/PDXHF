@@ -94,7 +94,7 @@ Expected RSS outputs from a build:
 
 - Blog posts use YAML front matter with `title`, `date.created` and `date.updated` (YYYY-MM-DD), optional `categories`, and `tags`. Meeting summaries are dated to meetings, with actual public release dates in `updated` and in the body. Stable slugs prevent title edits from changing URLs.
 - CTA buttons on the homepage use `{ .md-button }` and `{ .md-button--primary }`.
-- Grants belong on one page, newest first by approval date and grouped by year. `README.md` documents timeline markup and reciprocal links to award sections in meeting posts. Each entry needs a reviewed description and public rationale; a missing project URL is visibly marked. Tails stays under Approval date pending until a verified date is supplied.
+- Grants belong on one page, newest first by approval date and grouped by year. `README.md` documents timeline markup and reciprocal links to award sections in meeting posts. Each entry needs a reviewed description and public rationale; a missing project URL is visibly marked. Tails is ordered within 2025 by its confirmed payment date, explicitly labeled Payment sent, with approval-date verification retained as a source TODO.
 
 ## Dependencies
 
@@ -188,8 +188,9 @@ Remember: small, specific updates compound over time and make future handoffs ea
 - `use_material_blog: true` in RSS 1.17.9 does not extract Material date mappings. Set `date_from_meta.as_creation: date.created` and `as_update: date.updated`; a whole `date` mapping otherwise falls back to build time. Normalize existing posts when changing the keys, keeping their original creation/update dates.
 - Preserve the creation date and explicit post slug for stable dated URLs. Update only `date.updated` for later edits; the old README advice to bump a scalar date would change the permalink.
 - Collaboration preference for this backfill: review one packet containing exact meeting summaries and grant copy before pushing to the publishing branch. Keep unapproved drafts in an isolated temporary source tree, then commit/push the approved copy as one focused update.
-- A PayPal receipt confirms the Tails payment was sent September 10, 2025. Label this as `Payment sent` in the timeline and funding update; it does not establish the approval date. Keep visible approval-date-pending text and a source TODO; do not backfill from a submission timestamp or payment meeting.
+- A PayPal receipt confirms the Tails payment was sent September 10, 2025. Label this as `Payment sent` in the timeline and funding update; it does not establish the approval date. The collaborator requested removing the public pending label. Place Tails in the 2025 timeline by the labeled payment date and keep the approval-date source TODO in an HTML comment; do not relabel payment as approval.
 
 - Full-page Playwright checks now work with the cached newer headless shell. The existing mobile width override made `.md-content__inner` span the viewport plus Material margins, causing 16px overflow at 390px. Keep the outer content width at 100% but the inner article width at auto so margins fit.
 - The 15-summary/six-grant preview passed 214 HTML/RSS checks and 16 Playwright cases across homepage, timeline, two-award meeting post, and category in desktop/mobile light/dark modes. Both feeds contain 18 blog items; creation dates are meetings and update dates are release dates.
 - The April 2025 summary follows the source filename (April 10); timestamps suggest April 9 but the body has no date. A source TODO preserves this unresolved discrepancy for later confirmation.
+- After merging the small-grants post, the strict build and 12 Playwright cases passed across the timeline, Tails meeting post, and new article at desktop/mobile sizes in light/dark themes. Both feeds contain 19 blog items with the new article's October 14 creation/update dates; Tails retains its stable anchor and reciprocal links.
