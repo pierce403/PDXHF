@@ -10,6 +10,22 @@ Entries are ordered by approval date, or by the labeled payment date when an app
 
 <article class="grant-entry" markdown>
 
+### PCR Workshop + Ongoing { #grant-2026-pcr-workshop }
+
+**Approved:** October 14, 2026
+
+**Project:** Project link not yet available.
+
+**What it does:** Support a portable PCR and DNA-analysis kit, at least one hands-on workshop, and ongoing community access through equipment loans or help running experiments.
+
+**Why we funded it:** Hands-on biology workshops and continued access to shared tools give Portland's hacker community new opportunities to learn and experiment.
+
+[Approval summary](../blog/posts/meeting-2026-10-14.md#grant-2026-pcr-workshop)
+
+</article>
+
+<article class="grant-entry" markdown>
+
 ### Android TV device research { #grant-2026-android-tv }
 
 **Approved:** April 8, 2026
