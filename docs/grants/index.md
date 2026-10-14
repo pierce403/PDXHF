@@ -14,7 +14,7 @@ Entries are ordered by approval date, or by the labeled payment date when an app
 
 **Approved:** October 14, 2026
 
-**Project:** Project link not yet available.
+**Project:** [DIY BIO project page](https://johnowhitaker.dev/all.html#category=bio)
 
 **What it does:** Support a portable PCR and DNA-analysis kit, at least one hands-on workshop, and ongoing community access through equipment loans or help running experiments.
 
