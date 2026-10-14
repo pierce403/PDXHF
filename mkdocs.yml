@@ -4,6 +4,9 @@ site_url: https://pdxhf.org
 
 docs_dir: docs
 
+hooks:
+  - hooks/recent_posts.py
+
 nav:
   - Home: index.md
   - Grants: grants/index.md

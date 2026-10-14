@@ -48,6 +48,12 @@ Public decisions and organizational updates.
 - For historical backfills, prepare and review the exact copy before adding it to the publishing branch. The public release date must match the approved release day.
 - Preview with `mkdocs serve` or run a strict build to a temporary directory before pushing.
 
+## Homepage updates
+
+Recent Updates is generated at build time by `hooks/recent_posts.py` from the existing Material blog archive. It shows the three newest published posts by `date.created`, with their dates and resolved blog links. Drafts are excluded, and changing `date.updated` does not move an older post into this list.
+
+Keep the `<!-- recent-posts -->` marker in `docs/index.md`; editors do not need to maintain a separate list of homepage links.
+
 ## Grant timeline
 
 Keep awards on `docs/grants/index.md`, newest first by **approval date** and grouped by year. Each dated award links to its approval section in a meeting-summary post, which links back to the stable timeline anchor. Keep descriptions and rationales consistent in both places.

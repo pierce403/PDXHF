@@ -20,8 +20,7 @@ Empowering the Portland hacker community through grants, education, and asymmetr
 <div class="card full-width feature-card" markdown>
 ## :material-newspaper-variant: Recent Updates
 
-**[Welcome to the PDXHF blog](blog/posts/welcome.md)**
-We are starting a blog to share grant updates, community news, and upcoming events.
+<!-- recent-posts -->
 
 [View all posts →](blog/index.md)
 </div>
