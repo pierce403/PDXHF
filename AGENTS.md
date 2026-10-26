@@ -181,6 +181,7 @@ Remember: small, specific updates compound over time and make future handoffs ea
 - Miniflare pins its transitive sharp dependency exactly. A sharp-only `overrides.sharp` at `0.35.5` fixes GHSA-wq5f-xc86-pv6w while retaining pinned Wrangler; regenerate the npm lockfile so matching sharp binaries and libvips packages also update. Use the sharp-only form: a nested Miniflare override can produce an invalid `npm ci` tree on npm 10. Remove the override once the parent dependency supplies a patched version.
 - Keep urllib3 in both `requirements.txt` and build-time `requirements.lock` at `2.7.0` or newer for GHSA-mf9v-mfxr-j63j and GHSA-qccp-gfcp-xxvc. Validate with the strict Cloudflare build and `.venv/bin/python -m pip check`.
 - In restricted environments, use a writable `XDG_CONFIG_HOME` for Wrangler dry-runs; missing/unwritable home configuration can otherwise fail before validation. `npm ci`, `npm audit`, sharp SVG-to-PNG conversion, strict MkDocs, pip check, and Wrangler dry-run passed for this update on Node 24.19.0/Python 3.12.14; CI checks the repository-pinned Python version.
+- Keep the certifi pin aligned in both `requirements.txt` and build-time `requirements.lock`. For GHSA-6q48-6c7w-9gw2, certifi 2026.10.19 passed the strict build, `pip check`, an exact version assertion, and Wrangler dry-run on Python 3.14.4/Node 24.19.0; the dry run packaged 179 assets.
 
 ## Meeting and grant publication lessons (2026-10-14)
 
