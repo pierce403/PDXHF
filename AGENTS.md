@@ -120,6 +120,7 @@ Expected RSS outputs from a build:
 - If the header background image is missing, confirm `docs/assets/trees.jpg` and `docs/stylesheets/extra.css` paths.
 - GitHub Actions currently validates and retains an artifact; it does not publish. After a push, check the Cloudflare native Git build and the public route before reporting a live update. The retained Pages source is recovery material.
 - If local pip or npm installation reports `Errno 122` despite free filesystem space, treat it as a host quota limit. A strict build with a separately verified locked Python environment can still check Markdown; rely on CI for the pinned Node package build if local installation remains blocked.
+- Pin the validation runner to `ubuntu-24.04`: on November 11, `ubuntu-latest` selected Ubuntu 26.04, where `actions/setup-python@v6` could not find pinned Python 3.14.4. The official `actions/python-versions` manifest provides that version for Ubuntu 22.04/24.04. Keep the Python pin and use the supported runner rather than changing renderer versions to address runner-image drift.
 
 ## Agent Tips
 
